@@ -74,6 +74,11 @@ gulp.task("servType", function (){
       .pipe(gulp.dest("./routes"));
 });
 
+gulp.task("db", function (){
+  gulp.src([".src/serv/db.ts"])
+      .pipe(typescript(tsConfig.compilerOptions))
+      .pipe(gulp.dest("./"));
+});
 
 /*gulp.task("typescript", function () {
     gulp.src(["./src/cli/ts/*.ts","!./node_modules/**"])              // 対象となるTypeScriptファイルを全部指定
@@ -94,8 +99,9 @@ gulp.task("typescript", function () {
 
 
 
-gulp.task("default", ["sass", "typescript", "servType", "serve"], function () {
+gulp.task("default", ["sass", "typescript", "servType", "serve","db"], function () {
     gulp.watch("./src/routes/*ts", ["servType"]);
     gulp.watch("./src/cli/**/*.scss", ["sass"]);
     gulp.watch("./src/cli/**/*.ts", ["typescript"]);
+    gulp.watch("./src/serv/db.ts", ["db"])
 });

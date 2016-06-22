@@ -40,7 +40,8 @@
     "./src/cli/ts/view.ts",
     "./src/cli/ts/ydata.ts",
     "./src/cli/ts/yoperater.ts",
-    "./src/routes/menu.ts"
+    "./src/routes/menu.ts",
+    "./src/serv/db.ts"
   ],
   "atom": {
     "rewriteTsconfig": true
