@@ -1,0 +1,41 @@
+extends layout
+
+block content
+    script(src='/javascripts/bundle.js')
+    div.container
+        div.row
+            h1 もい
+            p menuだよ
+            form.form-horizontal
+                div.form-group
+                    label.control-label.col-sm-2 動画検索
+                    div.input-group.col-sm-5.col-offset-sm-5
+                        input#movietitle.form-control(type="text")
+                        span.input-group-btn
+                          button#moviesearch.btn.btn-default(type="button") 検索
+                div#searchresult.list-group
+                div.form-group
+                    label.control-label.col-sm-2 動画ID
+                    div.input-group.col-sm-5.col-offset-sm-5
+                        span.input-group-addon URL
+                        input#urltext.form-control(type="text")
+                        span.input-group-btn
+                          button#urlsend.btn.btn-default(type="button") 読み込み
+                div.form-group
+                    label.control-label.col-sm-2 スタート
+                    div.col-sm-1
+                      spani#startparam 0:00
+                    div.col-sm-5.col-offset-sm-4
+                      input#startpoint(type="range",
+                                           value="0")
+                      
+                    
+                div.form-group
+                    label.control-label.col-sm-2 エンド
+                    div.col-sm-1
+                      span#endparam 0:00
+                    div.col-sm-5.col-offset-sm-4
+                      input#endpoint(type="range",
+                                     value="0")
+            div#player
+            div#testplay
