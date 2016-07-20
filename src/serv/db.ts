@@ -1,6 +1,6 @@
-
+const MONGO_URL = process.env.MONGODB_URL;
 import mongodb = require("mongodb");
-let server = new mongodb.Server("localhost", 27017);
+let server = new mongodb.Server(MONGO_URL);
 let db = new mongodb.Db("clip", server, { w: 1 });
 db.open(function() {} );
 
